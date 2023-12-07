@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-4.6/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container" class="container mt-5 d-flex justify-content-center align-items-center col-md-12">
+        <form method="get" action=".">
+            <h1 class="text-center">Busca de Endereço</h1>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" maxlength="9">
+            </div>
+            <button type="submit" class="btn btn-primary" id="buscar-cep" style="width: 520px;">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Modal de endereço -->
+    <div class="modal fade" id="endereco-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document"> 
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Endereço</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="form-2">   
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="logradouro">Logradouro</label>
+                                <input type="text" class="form-control" id="logradouro" disabled>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" class="form-control" id="complemento" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" disabled>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="localidade">Localidade</label>
+                                <input type="text" class="form-control" id="localidade" disabled>
+                            </div>    
+                        </div>                  
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="uf">Estado</label>
+                                <input type="text" class="form-control" id="uf" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ddd">DDD</label>
+                                <input type="text" class="form-control" id="ddd" disabled>
+                            </div>   
+                        </div>                  
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de erro-->
+    <div class="modal fade" id="erro-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>ERRO</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    CEP não encontrado!!!
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap-4.6/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
